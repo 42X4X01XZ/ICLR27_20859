@@ -67,7 +67,7 @@ Supported downstream datasets (`--d_dataset`): `dtd`, `pets`, `flowers`, `aircra
 
 ## Pretrained MAE checkpoints
 
-The bilevel runs expect the official MAE checkpoints (pretrained on ImageNet-1k at 224x224), which must be named exactly as below:
+The bilevel runs expect the [official MAE checkpoints](https://github.com/facebookresearch/mae) (pretrained on ImageNet-1k at 224x224), which must be named exactly as below:
 
 | Backbone  | Checkpoint file                        | Download |
 |-----------|----------------------------------------|----------|
