@@ -1,0 +1,29 @@
+# BiSSLight dependencies.
+#
+# PyTorch is intentionally not pinned here: install a CUDA-enabled build
+# matching your system first, e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# The versions below are indicative lower bounds (the code was developed
+# with recent 2024/2025 releases); exact pins were not recorded.
+
+# ViT backbone utilities (models, layers, metrics)
+timm>=1.0.26on
+
+# LoRA / parameter-efficient fine-tuning
+peft>=0.18.1
+
+# Hyperparameter orchestration for the fine-tuning runs
+ray[tune]>=2.9
+
+# Experiment tracking (optional): install to enable `--wandb-api-key` logging,
+# otherwise all runs log to the console
+# wandb
+
+# Configuration handling
+typed-argument-parser
+pyyaml
+
+# General utilities
+numpy
+pandas
