@@ -67,15 +67,13 @@ Supported downstream datasets (`--d_dataset`): `dtd`, `pets`, `flowers`, `aircra
 
 ## Pretrained MAE checkpoints
 
-The bilevel runs expect the [official MAE checkpoints](https://github.com/facebookresearch/mae) (pretrained on ImageNet-1k at 224x224), which must be named exactly as below:
+All training scripts utilize the [official MAE checkpoints](https://github.com/facebookresearch/mae) (pretrained on ImageNet-1k at 224x224), which must be named exactly as below:
 
 | Backbone  | Checkpoint file                        | Download |
 |-----------|----------------------------------------|----------|
 | ViT-B/16  | `mae_pretrain_vit_base_full.pth`       | `https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base_full.pth` |
 | ViT-L/16  | `mae_pretrain_vit_large_full.pth`      | `https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large_full.pth` |
 | ViT-H/14  | `mae_pretrain_vit_huge_full.pth`       | `https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_huge_full.pth` |
-
-The backbone architecture is inferred from the checkpoint filename. The corresponding pretrained MAE decoder weights are loaded from the same checkpoint file.
 
 ## BiSSLight-trained LoRA models
 
