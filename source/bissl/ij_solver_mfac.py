@@ -3,24 +3,13 @@ from typing import List, Tuple, Optional
 import torch
 
 
+# The layer(/block)-wise M-FAC solver used in the main BiSSLight training setup.
 class IJGradCalcMFACLW:
     def __init__(
         self,
         parameters: Tuple[torch.nn.Parameter, ...],
         param_groups_idx: Optional[List[List[int]]] = None,
     ):
-        """
-        Since we are approximating the inverse hessian vector product, which we know does result in a term not involving theta_D,
-        i am instead choosing the vector of L^P + norm(theta_P) instead of L^P + norm(theta_P - theta_D).
-        This gives the advantage of the hessian of this objective being constant during each update of the upper-level,
-        making the lower-level gradients passed to this solver being more "accurate" (not totally, as they are gradients
-        from ealier updates, but at least its a bit more precise.)
-
-        For this solver, we hence assume that the pretext_grads given simply are the gradients of L^P solely, not the
-        entire lower-level objective (i.e. without the reg term.)
-
-        """
-
         self.parameters: Tuple[torch.nn.Parameter, ...] = parameters
         self.param_groups_idx: Optional[List[List[int]]] = param_groups_idx
 
